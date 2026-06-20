@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 dc1535e4c2a4551223c21b6eae8a265ac06d864f rajath.sakkari <rajath.sakkari@ig.com> 1781954691 +0530	commit (initial): Initial commit: NANDA L1 design docs, diagrams, and reference paper
+dc1535e4c2a4551223c21b6eae8a265ac06d864f 79c8bb56fc689a64dc340fd92f25021f65a018b8 rajath.sakkari <rajath.sakkari@ig.com> 1781954872 +0530	pull origin main --rebase (finish): refs/heads/main onto d8ffc554101001962b8c33a1defc5cb022d27e18
+79c8bb56fc689a64dc340fd92f25021f65a018b8 42f9f67afc19e589c22b26bb62b243200692902c rajath.sakkari <rajath.sakkari@ig.com> 1781955178 +0530	commit: Add section 8.5: resolution flow and client design decisions
+42f9f67afc19e589c22b26bb62b243200692902c 506b2750d555d30582c19e41fd0c8d550b8b5286 rajath.sakkari <rajath.sakkari@ig.com> 1781956007 +0530	commit: Implement NANDA L1 prototype: full resolve+verify pipeline
+506b2750d555d30582c19e41fd0c8d550b8b5286 2cd0dfedf2e97f17df6360227ea740486cd033b0 rajath.sakkari <rajath.sakkari@ig.com> 1781956045 +0530	commit: Remove node_modules from tracking; add .gitignore
+2cd0dfedf2e97f17df6360227ea740486cd033b0 79da00cd084f1958243de1bbec4d8eaf70ff67f9 rajath.sakkari <rajath.sakkari@ig.com> 1781956414 +0530	commit: Add interactive CLI (npm run cli) for exploring all L1 features
+79da00cd084f1958243de1bbec4d8eaf70ff67f9 415fb1b5f544f9cd0b24e87c7d075316e1577ec0 rajath.sakkari <rajath.sakkari@ig.com> 1781956734 +0530	commit: Rewrite README with full codebase guide

@@ -1,0 +1,21 @@
+{
+  "name": "nanda-l1",
+  "version": "0.1.0",
+  "description": "NANDA index Level 1 prototype: name -> AgentAddr -> AgentFacts, with W3C Verifiable Credential (eddsa-jcs-2022) tamper detection.",
+  "type": "module",
+  "scripts": {
+    "demo": "tsx src/demo.ts",
+    "cli":  "tsx src/cli.ts"
+  },
+  "dependencies": {
+    "@noble/ed25519": "2.1.0",
+    "@noble/hashes": "1.4.0",
+    "@scure/base": "1.1.6",
+    "canonicalize": "2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2"
+  }
+}

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/NANDA.iml" filepath="$PROJECT_DIR$/.idea/NANDA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/nanda-l1.iml" filepath="$PROJECT_DIR$/.idea/nanda-l1.iml" />
     </modules>
   </component>
 </project>
