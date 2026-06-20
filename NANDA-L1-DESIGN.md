@@ -154,3 +154,15 @@ the alternative it was taken over, and the cost.
 - **Name-consistency enforced** — `AgentFacts.agent_name` must equal the `AgentAddr.agent_name` that pointed here, so a valid facts document cannot be stapled onto the wrong name.
 - **Static endpoints resolved; rotating/adaptive carried but not executed** — the client selects a static endpoint to act; the dynamic-resolution tier is L2.
 - **Primary hosting only** — `private_facts_url` is modeled as a pointer (8.2) but the facts store serves the primary document; private-path resolution is L2.
+
+### 8.5 Resolution flow & the client
+
+- **Client is the orchestrator and the enforcement point** — it walks the full chain and verifies each hop itself, never trusting the index or facts store (untrusted transport). The stores deliver raw signed data; the client decides. This is the deliberate inversion from DNS, where the resolver's answer is trusted.
+- **Two-gate pipeline per hop: integrity then authority** — `verifyProof` (is the signature valid for the key?) runs first; only on success does the trust policy decide (is that key allowed?). A tampered record never reaches the authority check.
+- **Trust policy as a flat-allowlist config object** — `{ trustedIndex, trustedIssuers }`. Chosen over hardcoding or a full policy engine; structured so threshold verification (N independent audits) and TRS/reputation slot in later, but those are L2.
+- **Always take the metadata path** — fetch and verify the AgentFacts even though the paper marks metadata resolution "optional," because demonstrating the full verified path is the L1 deliverable. Lazy / direct-endpoint resolution is an L2 optimization.
+- **Name-consistency enforced** — `AgentFacts.agent_name === AgentAddr.agent_name` before acceptance, closing the binding from 8.1 / 8.4.
+- **Hard-fail on any failure, with a clear reason** — no fallback paths in L1 (secure default). Fallbacks (private if primary down, adaptive→static) are L2.
+- **No caching** — re-resolve each time; `ttl` is carried and signed but cache behavior is L2. The index-touched-once handshake is the design intent, not an L1 optimization.
+- **"Act" = select a static endpoint and simulate the call** — pick `endpoints.static[0]`, read `capabilities.authentication` to show how it would authenticate, and print the request it would make. Lands open decision #4 on the simulated side; a real stub hit is a small add if wanted.
+- **Structured result** — `{ ok, reason?, addr?, facts?, endpoint?, steps[] }` so the demo prints every step and shows success plus both tamper rejections transparently.
