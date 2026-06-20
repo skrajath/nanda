@@ -4,7 +4,8 @@
   "description": "NANDA index Level 1 prototype: name -> AgentAddr -> AgentFacts, with W3C Verifiable Credential (eddsa-jcs-2022) tamper detection.",
   "type": "module",
   "scripts": {
-    "demo": "tsx src/demo.ts"
+    "demo": "tsx src/demo.ts",
+    "cli":  "tsx src/cli.ts"
   },
   "dependencies": {
     "@noble/ed25519": "2.1.0",
