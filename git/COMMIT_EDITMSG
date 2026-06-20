@@ -1,9 +1,0 @@
-Rewrite README with full codebase guide
-
-Covers: file structure, what each module does, data model with field
-annotations, end-to-end data flow diagram, 8-step pipeline table, tamper
-scenario explanations (A & B), eddsa-jcs-2022 algorithm detail, and L1
-scope boundary. A reader should be able to follow the code without opening
-any other file.
-
-Co-Authored-By: Claude Sonnet 4.6 (1M context) <noreply@anthropic.com>
